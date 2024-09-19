@@ -18,14 +18,11 @@ function celsiusToFahr(temperature){
     return fahr;
 }
 
-celsiusToFahr(25);
-
-
 const greetingText = "Good morning!";
 const weatherCondition = "sunny";
 const userLocation = "San Antonio";
-let temperature = 22.8673;
-let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it\’s ${temperature.toFixed(1)}° outside.`;
+let temperature = 25;
+let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it\’s ${celsiusToFahr(temperature).toFixed(1)}°F outside.`;
 
 document.querySelector("#greeting").innerHTML = greetingText;
 
