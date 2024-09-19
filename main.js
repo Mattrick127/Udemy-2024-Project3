@@ -12,6 +12,15 @@ document.querySelector("#close-nav-menu").addEventListener("click", function(){
 
 // Greeting Section
 
+
+function celsiusToFahr(temperature){
+    let fahr = (temperature * 9/5) + 32;
+    return fahr;
+}
+
+celsiusToFahr(25);
+
+
 const greetingText = "Good morning!";
 const weatherCondition = "sunny";
 const userLocation = "San Antonio";
