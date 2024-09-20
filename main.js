@@ -27,3 +27,7 @@ let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it\
 document.querySelector("#greeting").innerHTML = greetingText;
 
 document.querySelector("#weather").innerHTML = weatherText;
+
+document.querySelector(".weather-group").addEventListener("click", function(){
+    console.log("clicked")
+});
