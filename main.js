@@ -22,12 +22,17 @@ const greetingText = "Good morning!";
 const weatherCondition = "sunny";
 const userLocation = "San Antonio";
 let temperature = 25;
-let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it\’s ${celsiusToFahr(temperature).toFixed(1)}°F outside.`;
+
+let celsiusText = `The weather is ${weatherCondition} in ${userLocation} and it\’s ${celsiusToFahr(temperature).toFixed(1)}°C outside.`;
+let fahrText = `The weather is ${weatherCondition} in ${userLocation} and it\’s ${celsiusToFahr(temperature).toFixed(1)}°F outside.`;
 
 document.querySelector("#greeting").innerHTML = greetingText;
+document.querySelector("#weather").innerHTML = celsiusText;
 
-document.querySelector("#weather").innerHTML = weatherText;
-
-document.querySelector(".weather-group").addEventListener("click", function(){
-    console.log("clicked")
+document.querySelector(".weather-group").addEventListener("click", function(e){
+    if (e.target.id == "celsius") {
+        document.querySelector("p#weather").innerHTML = celsiusText;
+    }   else if (e.target.id == "fahr") {
+        document.querySelector("p#weather").innerHTML = fahrText;
+    }
 });
