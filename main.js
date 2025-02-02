@@ -122,7 +122,6 @@ function clockHandler() {
 }
 
 function galleryHandler() {
-
     let mainImage = document.querySelector("#gallery > img");
     let thumbnails = document.querySelector("#gallery .thumbnails");
 
@@ -136,7 +135,6 @@ function galleryHandler() {
         thumb.src = image.src;
         thumb.alt = image.alt;
         thumb.dataset.arrayIndex = index;
-        thumb.dataset.selected = true;
         thumb.dataset.selected = index === 0 ? true : false;
 
         thumb.addEventListener("click", function(e){
@@ -144,7 +142,6 @@ function galleryHandler() {
             let selectedImage = galleryImages[selectedIndex];
             mainImage.src = selectedImage.src;
             mainImage.alt = selectedImage.alt;
-
             thumbnails.querySelectorAll("img").forEach(function(img){
                 img.dataset.selected = false;
             });
@@ -173,9 +170,11 @@ function galleryHandler() {
 function productsHandler() {
 
     let productsSection = document.querySelector(".products-area");
-    
 
+    //Run a loop through the products and create an HTMLL element for each of them.
     products.forEach(function(product, index){
+
+        //Create the HTML element for the individual product.
         let productElm = document.createElement("div");
         productElm.classList.add("product-item");
 
