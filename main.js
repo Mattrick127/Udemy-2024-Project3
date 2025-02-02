@@ -75,14 +75,23 @@ galleryImages.forEach(function(image, index){
     thumb.alt = image.alt;
     thumb.dataset.arrayIndex = index;
     thumb.dataset.selected = true;
+    thumb.dataset.selected = index === 0 ? true : false;
 
-    if(index === 0) {
-        thumb.dataset.selected = true;
-    } else{
-        thumb.dataset.selected = false;
-    }
+    thumb.addEventListener("click", function(e){
+        let selectedIndex = e.target.dataset.arrayIndex;
+        let selectedImage = galleryImages[selectedIndex];
+        mainImage.src = selectedImage.src;
+        mainImage.alt = selectedImage.alt;
+
+        thumbnails.querySelectorAll("img").forEach(function(img){
+            img.dataset.selected = false;
+        });
+
+        e.target.dataset.selected = true;
+        
+
+    });
 
 
     thumbnails.appendChild(thumb);
-
 });
