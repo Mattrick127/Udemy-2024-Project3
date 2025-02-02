@@ -59,4 +59,13 @@ const galleryImages = [
         src: "./assets/gallery/image3.jpg",
         alt: "Thumbnail Image 3"
     },
-]
+];
+
+
+for (let i in galleryImages) {
+    console.log(galleryImages[i]);
+}
+
+galleryImages.forEach(function(image, index){
+    console.log(image);
+});
