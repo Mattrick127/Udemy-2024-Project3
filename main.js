@@ -62,10 +62,15 @@ const galleryImages = [
 ];
 
 
-for (let i in galleryImages) {
-    console.log(galleryImages[i]);
-}
+// for (let i in galleryImages) {
+//     console.log(galleryImages[i]);
+// }
+
+let mainImage = document.querySelector("#gallery > img");
+mainImage.src = galleryImages[0].src;
+mainImage.alt = galleryImages[0].alt;
+
 
 galleryImages.forEach(function(image, index){
-    console.log(image);
+
 });
